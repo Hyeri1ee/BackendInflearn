@@ -3,16 +3,20 @@ package com.group.libraryapp.domain;
 import java.time.LocalDate;
 
 public class Fruit {
+    private long id;
     private String name;
     private LocalDate warehousingDate;
     private long price;
-    private int saled;
+    private boolean isSold;
 
-    public Fruit(String name, LocalDate warehousingDate, long price,int saled) {
+    public Fruit(String name, LocalDate warehousingDate, long price) {
         this.name = name;
         this.warehousingDate = warehousingDate;
         this.price = price;
-        this.saled = saled;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getName() {
@@ -27,7 +31,7 @@ public class Fruit {
         return price;
     }
 
-    public int getSaled(){
-        return saled;
+    public boolean isSold() {
+        return isSold;
     }
 }
