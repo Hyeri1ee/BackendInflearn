@@ -16,6 +16,15 @@ public class UserService {
         userRepository  = new UserRepository(jdbcTemplate);
     }
 
+    public void saveUser(UserCreateRequest request){
+        userRepository.saveUser(request.getName(),request.getAge());
+
+    }
+
+    public List<UserResponse> getUsers(){
+        return userRepository.getUsers();
+    }
+
     public void updateUser(UserUpdateRequest request){
 
         if (userRepository.isUserNotExist(request.getId())){
@@ -30,15 +39,6 @@ public class UserService {
         if (userRepository.isUserNotExist(name)){
             throw new IllegalArgumentException();
         }
-       userRepository.deleteUser(name);
-    }
-
-    public void saveUser(UserCreateRequest request){
-        userRepository.saveUser(request.getName(),request.getAge());
-
-    }
-
-    public List<UserResponse> getUsers(){
-        return userRepository.getUsers();
+        userRepository.deleteUser(name);
     }
 }
