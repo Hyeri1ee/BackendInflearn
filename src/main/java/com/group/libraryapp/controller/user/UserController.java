@@ -4,17 +4,20 @@ import com.group.libraryapp.dto.User.request.UserCreateRequest;
 import com.group.libraryapp.dto.User.request.UserUpdateRequest;
 import com.group.libraryapp.dto.User.response.UserResponse;
 import com.group.libraryapp.service.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class UserController {
-    private final UserService userService;
-    public UserController(UserService userService) {
+    @Autowired
+    private UserService userService;
 
-        this.userService = userService;
-    }
+    //    public UserController(UserService userService) {
+//
+//        this.userService = userService;
+//    }
 
     @PostMapping("/user") //POST /user
     public void saveUser(@RequestBody UserCreateRequest request){
