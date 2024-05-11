@@ -4,6 +4,7 @@ import com.group.libraryapp.domain.Fruit;
 import com.group.libraryapp.dto.fruit.FruitCreateRequest;
 import com.group.libraryapp.dto.fruit.FruitOverviewResponse;
 import com.group.libraryapp.repository.FruitRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public class FruitService {
     private final FruitRepository fruitRepository;
     private FruitOverviewResponse fruitOverviewResponse;
 
-    public FruitService(FruitRepository fruitRepository,FruitOverviewResponse fruitOverviewResponse) {
+    public FruitService(@Qualifier("sql") FruitRepository fruitRepository, FruitOverviewResponse fruitOverviewResponse) {
         this.fruitRepository = fruitRepository;
         this.fruitOverviewResponse = fruitOverviewResponse;
     }
