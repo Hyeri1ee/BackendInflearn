@@ -1,15 +1,9 @@
 package com.group.libraryapp.controller.fruit;
 
-import com.group.libraryapp.domain.Fruit;
 import com.group.libraryapp.dto.fruit.FruitCreateRequest;
 import com.group.libraryapp.dto.fruit.FruitOverviewResponse;
-import com.group.libraryapp.service.FruitService;
-import org.springframework.jdbc.core.JdbcTemplate;
+import com.group.libraryapp.service.fruit.FruitService;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 public class FruitController {

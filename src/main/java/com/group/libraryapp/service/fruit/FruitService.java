@@ -1,4 +1,4 @@
-package com.group.libraryapp.service;
+package com.group.libraryapp.service.fruit;
 
 import com.group.libraryapp.domain.Fruit;
 import com.group.libraryapp.dto.fruit.FruitCreateRequest;
