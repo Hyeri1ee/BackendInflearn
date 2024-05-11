@@ -10,3 +10,4 @@ public interface FruitRepository {
     public void saleFruit(int id);
     public List<Fruit> overviewFruit(String name);
 }
+
