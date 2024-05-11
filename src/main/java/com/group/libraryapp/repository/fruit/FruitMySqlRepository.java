@@ -1,4 +1,4 @@
-package com.group.libraryapp.repository;
+package com.group.libraryapp.repository.fruit;
 
 import com.group.libraryapp.domain.Fruit;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 @Qualifier("sql")
-public class FruitMySqlRepository implements  FruitRepository{
+public class FruitMySqlRepository implements FruitRepository {
 
     private final JdbcTemplate jdbcTemplate;
 

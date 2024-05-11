@@ -3,7 +3,7 @@ package com.group.libraryapp.service;
 import com.group.libraryapp.domain.Fruit;
 import com.group.libraryapp.dto.fruit.FruitCreateRequest;
 import com.group.libraryapp.dto.fruit.FruitOverviewResponse;
-import com.group.libraryapp.repository.FruitRepository;
+import com.group.libraryapp.repository.fruit.FruitRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.group.libraryapp.repository;
+package com.group.libraryapp.repository.fruit;
 
 import com.group.libraryapp.domain.Fruit;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class FruitMemoryRepository implements FruitRepository{
+public class FruitMemoryRepository implements FruitRepository {
     private final JdbcTemplate jdbcTemplate;
     private List<Fruit> memory = new ArrayList<>();
     private int num = 0;

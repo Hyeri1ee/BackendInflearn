@@ -1,4 +1,4 @@
-package com.group.libraryapp.repository;
+package com.group.libraryapp.repository.fruit;
 
 import com.group.libraryapp.domain.Fruit;
 
