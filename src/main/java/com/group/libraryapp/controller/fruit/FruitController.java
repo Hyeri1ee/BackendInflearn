@@ -2,15 +2,17 @@ package com.group.libraryapp.controller.fruit;
 
 import com.group.libraryapp.dto.fruit.FruitCreateRequest;
 import com.group.libraryapp.dto.fruit.FruitOverviewResponse;
+import com.group.libraryapp.service.fruit.FruitLatestService;
 import com.group.libraryapp.service.fruit.FruitService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Description;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class FruitController {
-    private final FruitService fruitService;
+    private final FruitLatestService fruitService;
 
-    public FruitController(FruitService fruitService) {
+    public FruitController( FruitLatestService fruitService) {
         this.fruitService = fruitService;
     }
 
@@ -22,7 +24,7 @@ public class FruitController {
 
     //문제2
     @PutMapping("/api/v1/fruit")
-    public void saledFruit(@RequestParam int id){
+    public void saleFruit(@RequestParam long id){
         fruitService.saleFruit(id);
     }
 
@@ -33,10 +35,4 @@ public class FruitController {
     }
 
 
-    //7일차 과제 문제2
-    @GetMapping("/api/v1/fruit/count")
-    @Description("거쳐간 특정 과일의 개수 반환")
-    public FruitCountResponse countFruit(@RequestParam Long count){
-        return fruitService.countFruit(count);
-    }
 }

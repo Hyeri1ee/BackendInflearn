@@ -1,25 +1,26 @@
 package com.group.libraryapp.domain;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDate;
 @Entity
-public class Fruit {
+public class Fruits {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(nullable = false, length = 20, name = "name" )
+    private Long id = null;
+    @Column(nullable = false, length = 20 )
     private String name;
-    @Column(nullable = false, name = "warehousingDate")
+    @Column(nullable = false)
     private LocalDate warehousingDate;
-    @Column(nullable = false, name = "price")
+    @Column(nullable = false)
     private long price;
-    @Column(nullable = false,name = "saled")
+    @Column(nullable = false)
     private int saled;
 
-    public Fruit() {
-    }
+    public Fruits(){
 
-    public Fruit(int id, String name, LocalDate warehousingDate, long price, int saled) {
+    }
+    public Fruits(long id, String name, LocalDate warehousingDate, long price, int saled) {
         this.id = id;
         this.name = name;
         this.warehousingDate = warehousingDate;
@@ -27,14 +28,14 @@ public class Fruit {
         this.saled = saled;
     }
 
-    public Fruit(String name, LocalDate warehousingDate, long price, int saled) {
+    public Fruits(String name, LocalDate warehousingDate, long price, int saled) {
         this.name = name;
         this.warehousingDate = warehousingDate;
         this.price = price;
         this.saled = saled;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

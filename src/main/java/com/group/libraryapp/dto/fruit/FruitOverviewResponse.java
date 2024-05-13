@@ -1,11 +1,14 @@
 package com.group.libraryapp.dto.fruit;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public class FruitOverviewResponse {
     private long salesAmount;
     private long notSalesAmount;
+
+
+    public FruitOverviewResponse(long salesAmount, long notSalesAmount) {
+        this.salesAmount = salesAmount;
+        this.notSalesAmount = notSalesAmount;
+    }
 
     public long getSalesAmount() {
         return salesAmount;

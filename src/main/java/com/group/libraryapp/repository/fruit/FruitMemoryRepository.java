@@ -1,17 +1,16 @@
 package com.group.libraryapp.repository.fruit;
 
-import com.group.libraryapp.domain.Fruit;
+import com.group.libraryapp.domain.Fruits;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
-public class FruitMemoryRepository implements FruitRepository {
+//@Repository
+public class FruitMemoryRepository {
     private final JdbcTemplate jdbcTemplate;
-    private List<Fruit> memory = new ArrayList<>();
+    private List<Fruits> memory = new ArrayList<>();
     private int num = 0;
 
 
@@ -21,11 +20,11 @@ public class FruitMemoryRepository implements FruitRepository {
 
     public void saveFruit(String name, long price, LocalDate warehousingDate) {
 
-        memory.add(new Fruit(num+1,name, warehousingDate,price,1));
+        memory.add(new Fruits(num+1,name, warehousingDate,price,1));
     }
 
     public void saleFruit(int id){
-        for (Fruit e : memory){
+        for (Fruits e : memory){
             if (e.getId() == id)
                 e.setSaled(0);
             else
@@ -33,9 +32,9 @@ public class FruitMemoryRepository implements FruitRepository {
         }
     }
 
-    public List<Fruit> overviewFruit(String name){
-        List<Fruit> list = new ArrayList<>();
-        for (Fruit e : memory){
+    public List<Fruits> overviewFruit(String name){
+        List<Fruits> list = new ArrayList<>();
+        for (Fruits e : memory){
             if (e.getName().equals(name)){
                 list.add(e);
             }else
