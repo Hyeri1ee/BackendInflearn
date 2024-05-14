@@ -1,5 +1,10 @@
 package com.group.libraryapp.dto.fruit;
 
+import com.group.libraryapp.domain.Fruits;
+
+import java.time.LocalDate;
+import java.util.List;
+
 public class FruitOverviewResponse {
     private long salesAmount;
     private long notSalesAmount;
