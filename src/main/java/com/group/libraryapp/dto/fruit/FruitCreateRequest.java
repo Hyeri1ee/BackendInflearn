@@ -1,11 +1,12 @@
 package com.group.libraryapp.dto.fruit;
 
-import org.springframework.stereotype.Component;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 public class FruitCreateRequest {
 
     private String name;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate warehousingDate;
     private long price;
     private int saled;
