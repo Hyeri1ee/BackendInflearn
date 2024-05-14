@@ -15,6 +15,22 @@ public class UserLoanHistory {
   private String bookName;
   private boolean isReturn;
 
+  public Long getId() {
+    return id;
+  }
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public String getBookName() {
+    return bookName;
+  }
+
+  public boolean isReturn() {
+    return isReturn;
+  }
+
   public UserLoanHistory(long userId, String bookName) {
     this.userId = userId;
     this.bookName = bookName;
