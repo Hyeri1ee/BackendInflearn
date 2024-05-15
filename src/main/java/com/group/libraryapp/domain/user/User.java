@@ -16,7 +16,7 @@ public class User {
     @Column(nullable = false)
     private Integer age;
 
-    @OneToMany(mappedBy = "user") //주인이 가진 필드 이름
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) //주인이 가진 필드 이름
     private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
 
     protected User() {
@@ -43,5 +43,6 @@ public class User {
         this.name = name;
         this.age = age;
     }
+
 
 }
