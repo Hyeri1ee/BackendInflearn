@@ -18,6 +18,7 @@ public class User {
     private Integer age;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true) //주인이 가진 필드 이름 // fetch = FetchType.LAZY
+
     private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
 
     protected User() {
@@ -58,3 +59,4 @@ public class User {
     }
 
 }
+

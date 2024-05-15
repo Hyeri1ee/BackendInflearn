@@ -32,7 +32,6 @@ public class BookService {
 
   @Transactional
   public void loanBook(BookLoanRequest request) {
-
     //1. 책 정보를 가져온다.
     Book book = bookRepository.findByName(request.getBookName())
             .orElseThrow(IllegalArgumentException::new);
@@ -56,4 +55,6 @@ public class BookService {
 //    history.doReturn();
     //userLoanHistoryRepository.save(history);
   }
+
+
 }
