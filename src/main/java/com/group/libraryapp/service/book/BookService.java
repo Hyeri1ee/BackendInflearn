@@ -56,11 +56,5 @@ public class BookService {
         //userLoanHistoryRepository.save(history);
     }
 
-    @Transactional
-    public void deleteUserHistory(String name){
-        User user = userRepository.findByName(name)
-                .orElseThrow(IllegalArgumentException::new);
-        user.removeOneHistroy();
-    }
 
 }
