@@ -1,6 +1,7 @@
 package com.group.libraryapp.domain.user;
 
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistory;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,7 +17,8 @@ public class User {
     @Column(nullable = false)
     private Integer age;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) //주인이 가진 필드 이름
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true) //주인이 가진 필드 이름 // fetch = FetchType.LAZY
+
     private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
 
     protected User() {
@@ -44,5 +46,17 @@ public class User {
         this.age = age;
     }
 
+    public void loanBook(String bookName){
+        this.userLoanHistories.add(new UserLoanHistory(this, bookName));
+    }
+
+    public void returnBook(String bookName){
+        UserLoanHistory targetHistroy = this.userLoanHistories.stream()
+                .filter(history -> history.getBookName().equals(bookName))
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new);
+        targetHistroy.doReturn();
+    }
 
 }
+
